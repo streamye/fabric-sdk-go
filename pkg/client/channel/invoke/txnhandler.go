@@ -183,6 +183,12 @@ func (c *CommitTxHandler) Handle(requestContext *RequestContext, clientContext *
 
 	select {
 	case txStatus := <-statusNotifier:
+		//logger.Infof("txStatus is %v,requestContext.Response is %v", txStatus, requestContext.Response)
+		if txStatus == nil {
+			requestContext.Error = status.New(status.EventServerStatus, 500,
+				"received invalid transaction", nil)
+			return
+		}
 		requestContext.Response.TxValidationCode = txStatus.TxValidationCode
 
 		if txStatus.TxValidationCode != pb.TxValidationCode_VALID {

@@ -52,8 +52,12 @@ const (
 )
 
 // ExampleCC query and transaction arguments
-var defaultQueryArgs = [][]byte{[]byte("query"), []byte("b")}
-var defaultTxArgs = [][]byte{[]byte("move"), []byte("a"), []byte("b"), []byte("1")}
+var defaultQueryArgs = [][]byte{[]byte("query")}
+//var defaultQueryArgs = [][]byte{[]byte("invoke"), []byte("b")}
+
+//var defaultTxArgs = [][]byte{[]byte("move"), []byte("a"), []byte("b"), []byte("1")}
+var defaultTxArgs = [][]byte{[]byte("invoke")}
+
 
 // ExampleCC init and upgrade args
 var initArgs = [][]byte{[]byte("init"), []byte("a"), []byte("100"), []byte("b"), []byte(ExampleCCInitB)}

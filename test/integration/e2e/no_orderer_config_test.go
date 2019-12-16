@@ -19,10 +19,10 @@ import (
 
 // runWithNoOrdererConfig enables chclient scenarios using config and client options provided
 func runWithNoOrdererConfig(t *testing.T, configOpt core.ConfigProvider, sdkOpts ...fabsdk.Option) {
-	setupAndRun(t, false, configOpt, noOrdererE2ETest, sdkOpts...)
+	setupAndRun(t, false, configOpt, noOrdererE2ETest, "invoke",sdkOpts...)
 }
 
-func noOrdererE2ETest(t *testing.T, sdk *fabsdk.FabricSDK) {
+func noOrdererE2ETest(t *testing.T, sdk *fabsdk.FabricSDK,chainCodeKey string) {
 	//prepare channel client context using client context
 	clientChannelContext := sdk.ChannelContext(channelID, fabsdk.WithUser("User1"), fabsdk.WithOrg(orgName))
 

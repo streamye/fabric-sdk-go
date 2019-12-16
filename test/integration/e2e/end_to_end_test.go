@@ -19,8 +19,18 @@ func TestE2E(t *testing.T) {
 		Run(t, config.FromFile(configPath))
 	})
 
-	t.Run("NoOrderer", func(t *testing.T) {
-		//Using setup done set above by end to end test, run below test with new config which has no orderer config inside
-		runWithNoOrdererConfig(t, config.FromFile(integration.GetConfigPath("config_e2e_no_orderer.yaml")))
+	t.Run("Query", func(t *testing.T) {
+		configPath := integration.GetConfigPath("config_e2e.yaml")
+		Query(t, config.FromFile(configPath))
 	})
+
+	t.Run("PressTest", func(t *testing.T) {
+		configPath := integration.GetConfigPath("config_e2e.yaml")
+		PressTest(t, config.FromFile(configPath))
+	})
+	//
+	//t.Run("NoOrderer", func(t *testing.T) {
+	//	//Using setup done set above by end to end test, run below test with new config which has no orderer config inside
+	//	runWithNoOrdererConfig(t, config.FromFile(integration.GetConfigPath("config_e2e_no_orderer.yaml")))
+	//})
 }

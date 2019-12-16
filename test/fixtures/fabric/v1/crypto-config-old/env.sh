@@ -1,0 +1,4 @@
+#!/bin/bash
+export ORG1CA1_FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/1b8918e3e395980ede4db79c47f6d8ac08e088b1f9bc819abeda880aaa364199_sk
+export ORG1TLSCA_FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/f16202e63883b1055ba7811ce348a6e29609f2be51c17a7708567528eba3d823_sk
+export ORG2CA1_FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/d1ca484bfba65882d6313dd99fb61fad28f6c6b437d5234951327d791103ae9b_sk
